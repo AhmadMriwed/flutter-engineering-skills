@@ -4,3 +4,8 @@ __pycache__/
 .venv/
 .env
 .env.*
+
+.dart_tool/
+build/
+.flutter-plugins-dependencies
+coverage/

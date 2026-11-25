@@ -1,7 +1,0 @@
-# Approve engineering choices for a new app
-
-1. Review supplied needs. Summarize size, screens and features, business complexity, team size and experience, state variety and lifetimes, async, API, realtime and offline needs, testing, growth, maintenance, SDK and platform constraints. Ask only for missing facts likely to change the recommendation.
-2. Check [architecture](../architecture/ARCHITECTURE_SELECTION.md), [state](../state-management/STATE_MANAGEMENT_SELECTION.md), [DI](../dependency-injection/DI_INDEX.md), and [compatibility](../compatibility/COMPATIBILITY_MATRIX.md). Identify complete eligible combinations and the optional networking, storage and navigation approaches.
-3. Present each eligible option with concrete benefits, drawbacks, effects on folders, UI state, dependency management, testing and maintenance. Recommend one with evidence and a confidence limit. With one eligible choice, present it and its limitations. If none fit, explain the gap and propose an explicit exception or additional validation, without claiming an approved profile.
-4. Ask for the user's explicit final choice. Wait before scaffolding or creating profile-dependent files. If their choice differs from the recommendation, honor it when supported. Surface a real conflict and ask how to resolve it.
-5. After approval, write PROJECT_PROFILE.md using the [template](PROJECT_PROFILE_TEMPLATE.md). Follow the [bootstrap](PROJECT_BOOTSTRAP.md). Keep the approval scoped to the chosen combination.

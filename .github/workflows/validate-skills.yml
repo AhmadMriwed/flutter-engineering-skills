@@ -12,3 +12,21 @@ jobs:
           python-version: '3.12'
       - run: python3 scripts/validate_skills.py
       - run: python3 scripts/validate_links.py
+
+  portable-fixture:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: flutter-mobile-engineering/assets/portable_items
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned Flutter SDK
+        run: |
+          git clone --depth 1 --branch 3.44.5 https://github.com/flutter/flutter.git "$RUNNER_TEMP/flutter"
+          echo "$RUNNER_TEMP/flutter/bin" >> "$GITHUB_PATH"
+      - run: flutter --version
+      - run: flutter pub get --enforce-lockfile
+      - run: dart format --output=none --set-exit-if-changed lib test
+      - run: dart analyze
+      - run: flutter analyze --no-pub
+      - run: flutter test --no-pub

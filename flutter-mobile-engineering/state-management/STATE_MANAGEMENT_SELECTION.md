@@ -1,0 +1,5 @@
+# State management selection
+
+Inventory screen-local and shared state, forms, async concurrency, realtime needs and persistence. Determine ownership and disposal at each route boundary. Compare test seams, team familiarity, dependency cost, UI binding and rebuilding. [GetX](getx/PROFILE.md) offers compact route-owned bindings and scoped observable updates. Its ownership and effect paths must be checked explicitly because registration and reactivity are separate concerns.
+
+Use [the comparison](COMPARISON_MATRIX.md) and [compatibility](../compatibility/COMPATIBILITY_MATRIX.md). Present the eligible profiles, recommendation and confidence to the user. Compare GetX route bindings and scoped Rx readers with Cubit method-based snapshots and provider ownership. GetX is compact for teams using its bindings and observables. Cubit offers explicit state transitions and constructor-injected tests with additional state modeling. Consider team experience, async interaction complexity and lifecycle boundaries. Present both whenever their complete combinations fit. Wait for explicit approval even when one option qualifies. Use the approved profile for existing features.

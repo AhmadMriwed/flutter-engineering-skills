@@ -1,0 +1,5 @@
+# Storage principles
+
+Use typed storage interfaces and durable keys. Classify credentials, preferences, identity and cached data by sensitivity and lifetime. Preserve preferences on sign-out unless product requirements specify otherwise. Design migration recovery, account isolation, freshness, invalidation and offline conflict policy before persisting synchronized data. Use appropriate platform credential protection when required. The [GetStorage recipe](profiles/get_storage/STORAGE_AND_SESSION.md) documents the reference implementation and its gaps.
+
+- **STORAGE-006 CONDITIONAL** For recoverable attachment drafts, separate account/draft ownership, persisted staged files, bounded transport and server commit acknowledgment. Keep recoverable files until acknowledged or explicitly discarded. Reconcile interrupted uploads, expiry, account changes and duplicate retry. Limit retention and validate file type, size and access. Use a draft store and queue with independently testable interfaces. REF-002-E06 is specialized source evidence. Check restart, retry limits and cleanup before rollout.

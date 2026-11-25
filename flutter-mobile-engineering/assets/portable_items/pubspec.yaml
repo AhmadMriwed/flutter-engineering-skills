@@ -1,0 +1,13 @@
+name: portable_items
+environment:
+  sdk: ^3.5.0
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_bloc: 8.1.6
+  get: 4.7.2
+  get_it: 7.7.0
+  dio: 5.9.2
+dev_dependencies:
+  flutter_test:
+    sdk: flutter

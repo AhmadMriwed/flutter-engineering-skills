@@ -4,7 +4,7 @@ import re
 
 from validate_links import ROOT, local_links, markdown_body, markdown_files
 
-SKILLS = ROOT / "مهارات تصميم الموبايل"
+SKILLS = ROOT / "flutter-mobile-engineering"
 RULE = r"(?!REF-)[A-Z]+-\d{3}"
 CLASSIFICATION = (
     "MANDATORY|DEFAULT|CONDITIONAL|OPTIONAL|PROJECT-SPECIFIC|INCONSISTENT|"
@@ -59,6 +59,7 @@ def main():
     )
     check(header and len(header[1]) <= 64 and len(header[2]) <= 1024,
           "Invalid SKILL.md frontmatter or missing skill body")
+    check(header and header[1] == SKILLS.name, "Skill name must match its directory")
     version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
     check(re.fullmatch(SEMVER, version), "VERSION must use MAJOR.MINOR.PATCH")
     check(f"## {version}" in (ROOT / "CHANGELOG.md").read_text().splitlines(),
@@ -72,6 +73,10 @@ def main():
         check(bool(raw.strip()), f"Empty Markdown file: {path.relative_to(ROOT)}")
         check(not re.search(r"(?<![\w/])(?:/Users/|/home/|file://|[A-Za-z]:\\\\Users\\\\)", raw),
               f"Machine-specific path in {path.relative_to(ROOT)}")
+        if path.is_relative_to(SKILLS):
+            for raw_link, target, _ in local_links(path):
+                check(target.is_relative_to(SKILLS),
+                      f"Installed skill link leaves package: {path.relative_to(ROOT)}: {raw_link}")
         body = markdown_body(path)
         definitions.update(re.findall(rf"\*\*({RULE}) (?:{CLASSIFICATION})\*\*", body))
         references.update(re.findall(rf"\b{RULE}\b", body))
@@ -93,11 +98,8 @@ def main():
         path = SKILLS / relative
         content = path.read_text()
         check(profile in content, f"Profile ID absent from {relative}")
-        if profile == "STATE-CUBIT":
-            check("**Pending**" in content, "Cubit intake must be Pending before extraction")
-        else:
-            check(re.search(rf"\| Status \| {STATUS}\b", content),
-                  f"Invalid profile status in {relative}")
+        check(re.search(rf"\| Status \| {STATUS}\b", content),
+              f"Invalid profile status in {relative}")
 
     matrix = (SKILLS / "compatibility/COMPATIBILITY_MATRIX.md").read_text()
     profile_ids = set(re.findall(r"\b(?:ARCH|STATE|DI|NET|STORE|NAV)-[A-Z][A-Z0-9-]+\b", matrix))
