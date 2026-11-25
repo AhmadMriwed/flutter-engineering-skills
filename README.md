@@ -13,7 +13,7 @@ Check the [compatibility matrix](flutter-mobile-engineering/compatibility/COMPAT
 
 ## Install and start
 
-Download or clone the [GitHub repository](https://github.com/AhmadMriwed/flutter-engineering-skills) and install the complete `flutter-mobile-engineering` folder. Choose project scope to share the skill with a team, or user scope to use it across projects. Follow the platform-specific commands in the [Codex guide](docs/CODEX_INTEGRATION.md) or the [Claude Code guide](docs/CLAUDE_CODE_INTEGRATION.md).
+Download the [installable ZIP](https://github.com/AhmadMriwed/flutter-engineering-skills/releases/download/v0.2.0/flutter-mobile-engineering-v0.2.0.zip) from the [v0.2.0 pre-release](https://github.com/AhmadMriwed/flutter-engineering-skills/releases/tag/v0.2.0), or clone the [GitHub repository](https://github.com/AhmadMriwed/flutter-engineering-skills). Install the complete `flutter-mobile-engineering` folder. Choose project scope to share the skill with a team, or user scope to use it across projects. Follow the platform-specific commands in the [Codex guide](docs/CODEX_INTEGRATION.md) or the [Claude Code guide](docs/CLAUDE_CODE_INTEGRATION.md).
 
 1. Open your Flutter project or a new project directory in your agent.
 2. Use `$flutter-mobile-engineering` in Codex or `/flutter-mobile-engineering` in Claude Code.
