@@ -1,0 +1,3 @@
+# Project profile schema
+
+All [template fields](PROJECT_PROFILE_TEMPLATE.md) are required. Use the knowledge base commit when no release exists. Profiles use stable IDs and versions, with integration-specific scope where needed. Record package constraints and resolved versions separately when they diverge. An exception names the boundary, justification, validation and decision owner. Approval records the user-approved combination and decision reference. Pending project analysis may live in a proposal, and implementation begins after approval. Verify registered combinations in the [compatibility matrix](../compatibility/COMPATIBILITY_MATRIX.md).

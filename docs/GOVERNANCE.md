@@ -1,0 +1,3 @@
+# Governance
+
+Reference projects supply evidence and remain independent. Propose changes with source revision, observed behavior, scored tradeoffs, compatibility impact, and verification scope. Obtain approval before adopting substantive changes or changing a release version. Keep pending candidates out of the supported options. Use the [source registry](../مهارات%20تصميم%20الموبايل/knowledge-management/SOURCE_REGISTRY.md), [evidence registry](../مهارات%20تصميم%20الموبايل/knowledge-management/EVIDENCE_REGISTRY.md) and [import workflow](../مهارات%20تصميم%20الموبايل/workflows/IMPORT_SKILLS_FROM_PROJECT.md).

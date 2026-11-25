@@ -1,0 +1,3 @@
+# Architecture selection
+
+Start with [project decisions](../project-setup/PROJECT_DECISION_WORKFLOW.md). Compare boundary needs, feature count, data ownership, cross-feature flows, team experience, test seams and maintenance burden. ARCH-FEATURE offers explicit test seams and a reusable HTTP gateway. It adds interfaces and assembly work for owned APIs. Its workflow allows lightweight static features. Applications with complex independent domain rules or durable offline writes require additional evidence or a proposed extension. Compare only supported architectures as selectable options. When one qualifies, present that one and its limitations and ask for approval.
